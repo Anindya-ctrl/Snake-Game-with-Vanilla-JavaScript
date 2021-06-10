@@ -7,7 +7,7 @@ body {
     align-items: center;
     margin: 0;
     background-color: hsl(249, 14%, 10%);
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #game-board {
@@ -20,7 +20,8 @@ body {
 }
 
 .snake {
-    background-color: hsl(120, 73%, 70%);
+    border: 1px solid black;
+    background-color: hsl(120, 73%, 65%);
 }
 
 .food {
