@@ -1,18 +1,14 @@
-import { getInputDirections } from './inputHandler.js';
+import { getInputDirections } from './functions/inputHandler.js';
+import { addSegments } from './functions/snakeFunctions.js';
 
 export const SNAKE_SPEED_PER_SECOND = 5;
-const snakeBody = [{
+export const snakeBody = [{
     x: 11,
-    y: 11,
-}, {
-    x: 12,
-    y: 11,
-}, {
-    x: 13,
     y: 11,
 }];
 
 export const updateSnake = () => {
+    addSegments();
     const inputDirection = getInputDirections();
 
     for(let i = snakeBody.length - 2; i >= 0; i--) {
