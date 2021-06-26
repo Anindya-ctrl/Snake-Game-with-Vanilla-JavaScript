@@ -1,5 +1,4 @@
 import { updateSnake, renderSnake, SNAKE_SPEED_PER_SECOND } from './snake.js';
-let lastRenderTimeStamp = 0;
 const gameBoard = document.getElementById('game-board');
 
 const updateGame = () => {
@@ -11,16 +10,7 @@ const renderGame = () => {
     renderSnake(gameBoard);
 }
 
-function GameLoop(currentTimeStamp) {
-    window.requestAnimationFrame(GameLoop);
-    
-    const secondsSinceLastRender = (currentTimeStamp - lastRenderTimeStamp) / 1000;
-    if(secondsSinceLastRender < 1 / SNAKE_SPEED_PER_SECOND) return ;
-    
-    lastRenderTimeStamp = currentTimeStamp;
-
+setInterval(() => {
     updateGame();
     renderGame();
-}
-
-window.requestAnimationFrame(GameLoop);
+}, (1 / SNAKE_SPEED_PER_SECOND) * 1000);
